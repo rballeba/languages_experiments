@@ -1,0 +1,10 @@
+name = "basic_tutorial"
+version = "0.1.0"
+defaultTargets = ["basic_tutorial"]
+
+[[lean_lib]]
+name = "BasicTutorial"
+
+[[lean_exe]]
+name = "basic_tutorial"
+root = "Main"
