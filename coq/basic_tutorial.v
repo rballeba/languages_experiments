@@ -87,3 +87,21 @@ nil => false
 end.
 
 Compute head_evb (4::2::3::nil).
+
+(* Sorting using coq's not efficient sorting*)
+
+Fixpoint insert n l :=
+    match l with
+        nil => n::nil
+        | a::tl => if n <=? a then n::l else a::(insert n tl)
+        end.
+
+Compute insert 3 (1::2::4::5::6::nil).
+
+Fixpoint sort l := 
+    match l with
+    nil => nil
+    | a::tl => insert a (sort tl)
+    end.
+
+    Compute sort (1::4::3::22::5::16::7::nil).
